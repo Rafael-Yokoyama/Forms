@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Test from './pages/Test';
+import PageTest from './pages/PageTest';
 import Routes from './routes';
 
 import './styles/global.css';
@@ -13,7 +13,7 @@ const App: React.FC = () => {
     </BrowserRouter>
     */
    <>
-   <Test/>
+   <PageTest/>
    </>
   );
 };
