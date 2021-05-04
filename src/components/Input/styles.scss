@@ -1,0 +1,31 @@
+.answer-input {
+    width: 340px;
+    margin-top: 40px;
+    border-bottom: 1px solid var(--color-4);
+
+    input {
+      width: 300px;
+      border: none;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+  }
+  
+  .focus {  
+    border-bottom: 2px solid var(--color-2);
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 8px 0;
+    font-size: 14px;
+
+    .input-radio {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
+  }
+  
+ 

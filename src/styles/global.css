@@ -1,3 +1,21 @@
+:root {
+    --color-1:#BCC44B;
+    --color-2:#dbe734 ;
+    -color-3: #202124;
+    --color-4:#eee ;
+    --color-5:#ff0000;
+    
+    --white-900: #ffffff;
+    --white-800: rgba(255, 255, 255, 0.8);
+    --black:#000;
+    -shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;

@@ -1,14 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Test from './pages/Test';
+import Routes from './routes';
 
 import './styles/global.css';
 
-// import { Container } from './styles';
 
 const App: React.FC = () => {
-  return <div />;
-  
-}
+  return (
+    /*<BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+    */
+   <>
+   <Test/>
+   </>
+  );
+};
 
 export default App;
-
 
