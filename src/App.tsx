@@ -1,22 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import PageTest from './pages/PageTest';
-import Routes from './routes';
 
 import './styles/global.css';
 
+import Routes from './routes';
 
 const App: React.FC = () => {
   return (
-    /*<BrowserRouter>
+    <BrowserRouter>
       <Routes />
     </BrowserRouter>
-    */
-   <>
-   <PageTest/>
-   </>
   );
 };
 
 export default App;
-

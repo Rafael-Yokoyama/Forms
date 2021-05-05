@@ -1,18 +1,19 @@
 .answer-input {
     width: 340px;
     margin-top: 40px;
-    border-bottom: 1px solid var(--color-4);
+    border-bottom: 1px solid var(--color-1);
 
     input {
       width: 300px;
       border: none;
-      margin-bottom: 5px;
+      background:transparent;
+      margin-bottom: 2px;
       font-size: 14px;
     }
   }
   
   .focus {  
-    border-bottom: 2px solid var(--color-2);
+    border-bottom: 2px solid var(--black);
   }
   
   .option {
@@ -25,7 +26,9 @@
       width: 18px;
       height: 18px;
       margin-right: 10px;
+    
     }
+    
   }
   
  
