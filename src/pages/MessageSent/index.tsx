@@ -1,8 +1,12 @@
 import React,{ } from 'react';
+import Message from '../../components/Message';
 
 const MessageSent: React.FC = () => {
     return(
-        <div>Oi</div>
+        <>
+
+        <Message/>
+         </>
 
     );
 }

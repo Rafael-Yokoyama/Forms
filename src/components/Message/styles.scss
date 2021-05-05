@@ -1,0 +1,37 @@
+.containerMessage {
+    max-width: 620px;
+    margin: auto;
+    h1 {
+      font-size: 32px;
+      margin: 0;
+    
+    }
+
+    .link-back {
+      margin: 8px  0;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    a{
+      color: var(--color-3);
+    }
+
+
+  }
+  
+  .block {
+    background: var(--color-4);
+    padding: 22px 24px 24px;
+    border-radius: 10px;
+    margin: 12px 0;
+  }
+  
+  .black {
+    display: block;
+    font-size: 14px;
+    color: #202124;
+    margin: 18px 0 0;
+  }
+  
+ 
