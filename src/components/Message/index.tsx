@@ -1,11 +1,11 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
-import './styles.scss';
+import "./styles.scss";
 
 const Message: React.FC = () => {
-  const { t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="containerMessage">
       <div>
@@ -17,7 +17,7 @@ const Message: React.FC = () => {
           <div className="link-back">
             <Link to="/">{t("message.submit")}</Link>
           </div>
-          
+
           <div className="link-back">
             <Link to="/dashboard">{t("message.see")}</Link>
           </div>

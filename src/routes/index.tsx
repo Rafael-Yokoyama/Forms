@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
 import MessageSent from '../pages/MessageSent';
 import PageDashboard from '../pages/PageDashboard';
 import PageTest from '../pages/PageTest';

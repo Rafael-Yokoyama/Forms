@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 
-import api from '../../services/api';
+import api from "../../services/api";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
 
-import './styles.scss';
-import toast, { Toaster } from 'react-hot-toast';
-import { useTranslation } from 'react-i18next';
+import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+import "./styles.scss";
 
 interface IAnswer {
   question: string;
@@ -31,30 +31,25 @@ const Test: React.FC = () => {
   const history = useHistory();
 
   const [test, setTest] = useState([]);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [answers, setAnswers] = useState<IAnswer[]>([]);
 
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (language: string | undefined ) => {
+  const changeLanguage = (language: string | undefined) => {
     i18n.changeLanguage(language);
   };
 
-
-
-
   useEffect(() => {
     async function loadData() {
-      try{
-      const response = await api.get('/test');
-      setTest(response.data);
-    
-  }catch (erro){
-    console.log(erro)
-
-
-  }}
+      try {
+        const response = await api.get("/test");
+        setTest(response.data);
+      } catch (erro) {
+        console.log(erro);
+      }
+    }
 
     loadData();
   }, []);
@@ -63,47 +58,41 @@ const Test: React.FC = () => {
     async (event) => {
       event.preventDefault();
 
-      if (name === '' || email === '') {
-        toast.error(" Marque todos os campos obrigatórios")
+      if (name === "" || email === "") {
+        toast.error(" Marque todos os campos obrigatórios");
         return;
       }
 
-
       try {
-        await api.post('/test_answers', {
-       
+        await api.post("/test_answers", {
           name,
           email,
           answers,
         });
-        
 
-        history.push('/message');
-        
+        history.push("/message");
       } catch (err) {
         console.log(err);
       }
     },
-    [name, email, answers, history],
+    [name, email, answers, history]
   );
 
   return (
     <div className="container">
-      <div><Toaster/></div>
+      <div>
+        <Toaster />
+      </div>
       <header>
-      <div className="block-1">
-         
-        </div>
+        <div className="block-1"></div>
         <div className="block first-block">
           <h1> {t("title")} </h1>
-        <div className="buttons">
-        <button onClick={() => changeLanguage("en")}>EN</button>
-      <button onClick={() => changeLanguage("pt")}>PT</button>
-      
-       </div>
+          <div className="buttons">
+            <button onClick={() => changeLanguage("en")}>EN</button>
+            <button onClick={() => changeLanguage("pt")}>PT</button>
+          </div>
 
-       <span>*   {t("forms.required")}</span>
-      
+          <span>* {t("forms.required")}</span>
         </div>
       </header>
 
@@ -111,7 +100,7 @@ const Test: React.FC = () => {
         <div>
           <div className="test">
             <h4>
-            {t("forms.name")}
+              {t("forms.name")}
               <span>*</span>
             </h4>
 
@@ -126,7 +115,7 @@ const Test: React.FC = () => {
         <div>
           <div className="test">
             <h4>
-            {t("forms.email")}
+              {t("forms.email")}
               <span>*</span>
             </h4>
 
@@ -150,35 +139,30 @@ const Test: React.FC = () => {
 
                 <div className="answer-radio">
                   {item.options.map((option: IOptions) => {
-                      
-                 
                     return (
                       <>
-                       <p className="respostas">{option.value}</p>
-                  <div className="input-input">
-                  <Input
-                          key={option.id}
-                          option="input-radio"
-                          type="radio"
-                          className="input-radio"
-                          answer={option.value}
-                          name={`question${item.id}`}
-                          value={option.question_alternative}
-                        
-                      
-                        onChange={(e) => {
-                          setAnswers([
-                            ...answers,
-                            {
-                              question: item.id,
-                              answer: e.target.value,
-                            },
-                          ]);
-                        }}
-                      />
-                  </div>
-                      
-                    </>
+                        <p className="respostas">{option.value}</p>
+                        <div className="input-input">
+                          <Input
+                            key={option.id}
+                            option="input-radio"
+                            type="radio"
+                            className="input-radio"
+                            answer={option.value}
+                            name={`question${item.id}`}
+                            value={option.question_alternative}
+                            onChange={(e) => {
+                              setAnswers([
+                                ...answers,
+                                {
+                                  question: item.id,
+                                  answer: e.target.value,
+                                },
+                              ]);
+                            }}
+                          />
+                        </div>
+                      </>
                     );
                   })}
                 </div>
@@ -194,5 +178,3 @@ const Test: React.FC = () => {
 };
 
 export default Test;
-
-//json-server server.json -p 3001 

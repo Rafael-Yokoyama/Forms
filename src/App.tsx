@@ -1,10 +1,8 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-
-
-import './styles/global.css';
 import './i18n';
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
+import './styles/global.css';
 
 const App: React.FC = () => {
   return (
