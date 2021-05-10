@@ -1,23 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
 const Message: React.FC = () => {
+  const { t} = useTranslation();
   return (
     <div className="containerMessage">
       <div>
         <div className="block first-block">
-          <h1>Teste Sobre League of Legends</h1>
+          <h1>{t("title")}</h1>
 
-          <span className="black">Sua resposta foi registrada.</span>
+          <span className="black">{t("message.registered")}.</span>
 
           <div className="link-back">
-            <Link to="/">Enviar outra resposta</Link>
+            <Link to="/">{t("message.submit")}</Link>
           </div>
           
           <div className="link-back">
-            <Link to="/dashboard">Ver respostas</Link>
+            <Link to="/dashboard">{t("message.see")}</Link>
           </div>
         </div>
       </div>

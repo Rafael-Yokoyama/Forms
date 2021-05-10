@@ -7,6 +7,8 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import './styles.scss';
+import toast, { Toaster } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 interface IAnswer {
   question: string;
@@ -33,6 +35,15 @@ const Test: React.FC = () => {
   const [email, setEmail] = useState('');
   const [answers, setAnswers] = useState<IAnswer[]>([]);
 
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language: string | undefined ) => {
+    i18n.changeLanguage(language);
+  };
+
+
+
+
   useEffect(() => {
     async function loadData() {
       try{
@@ -41,6 +52,7 @@ const Test: React.FC = () => {
     
   }catch (erro){
     console.log(erro)
+
 
   }}
 
@@ -52,18 +64,22 @@ const Test: React.FC = () => {
       event.preventDefault();
 
       if (name === '' || email === '') {
-        alert('Marque todos os campos obrigatórios');
+        toast.error(" Marque todos os campos obrigatórios")
         return;
       }
 
+
       try {
         await api.post('/test_answers', {
+       
           name,
           email,
           answers,
         });
+        
 
         history.push('/message');
+        
       } catch (err) {
         console.log(err);
       }
@@ -73,76 +89,81 @@ const Test: React.FC = () => {
 
   return (
     <div className="container">
+      <div><Toaster/></div>
       <header>
       <div className="block-1">
          
         </div>
         <div className="block first-block">
-          <h1>Teste Sobre League of Legends </h1>
-          <span>*Obrigatório</span>
+          <h1> {t("title")} </h1>
+        <div className="buttons">
+        <button onClick={() => changeLanguage("en")}>EN</button>
+      <button onClick={() => changeLanguage("pt")}>PT</button>
+      
+       </div>
+
+       <span>*   {t("forms.required")}</span>
+      
         </div>
       </header>
 
       <form onSubmit={submitAnswers}>
-        <section>
+        <div>
           <div className="test">
             <h4>
-              Name
+            {t("forms.name")}
               <span>*</span>
             </h4>
 
             <Input
               value={name}
-              placeholder="Seu Nome"
+              placeholder={t("forms.yourname")}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-        </section>
+        </div>
 
-        <section>
+        <div>
           <div className="test">
             <h4>
-              E-mail
+            {t("forms.email")}
               <span>*</span>
             </h4>
 
             <Input
               value={email}
               type="email"
-              placeholder="Seu E-mail"
+              placeholder={t("forms.youremail")}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-        </section>
+        </div>
 
-        <section>
+        <div>
           {test.map((item: ITestItem) => {
             return (
               <div key={item.id} className="block">
                 <h4>
                   {item.question}
-                
                   <span>*</span>
                 </h4>
 
                 <div className="answer-radio">
                   {item.options.map((option: IOptions) => {
                       
-                     
-                    
-                     
                  
                     return (
                       <>
                        <p className="respostas">{option.value}</p>
                   <div className="input-input">
                   <Input
-                         key={option.id}
-                         option="input-radio"
-                         type="radio"
-                         className="input-radio"
-                        
-                         name={`question${item.id}`}
+                          key={option.id}
+                          option="input-radio"
+                          type="radio"
+                          className="input-radio"
+                          answer={option.value}
+                          name={`question${item.id}`}
+                          value={option.question_alternative}
                         
                       
                         onChange={(e) => {
@@ -164,12 +185,14 @@ const Test: React.FC = () => {
               </div>
             );
           })}
-        </section>
+        </div>
 
-        <Button>Enviar</Button>
+        <Button> {t("forms.send")}</Button>
       </form>
     </div>
   );
 };
 
 export default Test;
+
+//json-server server.json -p 3001 

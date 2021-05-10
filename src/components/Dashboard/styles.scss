@@ -1,7 +1,7 @@
 .containerDashed {
     max-width: 640px;
     margin: auto;
-    text-transform: capitalize;
+  
       
     header{
       display: flex;
@@ -16,7 +16,6 @@
   }
   
   .block {
-    background: #fff;
     padding: 22px 24px 24px;
     border-radius: 10px;
     margin: 12px 0;
@@ -34,8 +33,6 @@ h3{
   .first-block {
     border-top: 10px solid var(--black);
   }
-
-
   
   .answers  {
     margin-bottom: -15px;

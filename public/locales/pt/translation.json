@@ -1,4 +1,25 @@
 {
+    "title": "  Questionário de League of Legends",
+    "forms": {
+      "name": "Nome",
+      "email": "E-mail",
+      "yourname": "Seu Nome",
+      "youremail": "Seu E-mail",
+      "required": "Obrigatorio",
+      "send":"enviar"
+    },
+    "dashboard": {
+      "response":"Respostas dos Participantes",
+      "answers":"Repostas",
+      "participants":"Participante"
+    },
+    "message":{
+      "registered": "Sua resposta foi registrada.",
+      "submit":" Envie outra resposta",
+      "see":"Ver Repostas"   
+
+
+  },
   "test": [
     {
       "id": "1",
@@ -106,63 +127,37 @@
     }
   ],
   "test_answers": [
+  
     {
-      "name": "Braum",
-      "email": "braum@gmail.com",
+      "name": "ja0",
+      "email": "jao@gmail.com",
       "answers": [
         {
           "question": "1",
-          "answer": "B"
+          "answer": "D"
         },
         {
           "question": "2",
-          "answer": "B"
+          "answer": "A"
         },
         {
           "question": "3",
-          "answer": "B"
+          "answer": "D"
         },
         {
           "question": "4",
-          "answer": "B"
+          "answer": "C"
         }
       ],
-      "id": 1
+      "id": 8
     },
     {
       "name": "Teemo",
-      "email": "teemo@gmail.com",
+      "email": "Teemo@gmail.com",
       "answers": [
         {
           "question": "1",
-          "answer": "B"
-        },
-        {
-          "question": "2",
           "answer": "C"
-        },
-        {
-          "question": "3",
-          "answer": "C"
-        },
-        {
-          "question": "4",
-          "answer": "B"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "name": "Soraka",
-      "email": "soraka@gmail.com",
-      "answers": [
-        {
-          "question": "1",
-          "answer": "B"
-        },
-        {
-          "question": "2",
-          "answer": "A"
         },
         {
           "question": "3",
@@ -170,102 +165,17 @@
         },
         {
           "question": "4",
-          "answer": "A"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "Rafael ",
-      "email": "rafael@gmail.com",
-      "answers": [
-        {
-          "question": "1",
-          "answer": "A"
-        },
-        {
-          "question": "2",
-          "answer": "A"
-        },
-        {
-          "question": "3",
-          "answer": "A"
-        },
-        {
-          "question": "4",
-          "answer": "A"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "name": "Ana",
-      "email": "ana@gmail.com",
-      "answers": [
-        {
-          "question": "1",
-          "answer": "C"
-        },
-        {
-          "question": "2",
-          "answer": "C"
-        },
-        {
-          "question": "3",
-          "answer": "C"
-        },
-        {
-          "question": "4",
-          "answer": "D"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "name": "Maria",
-      "email": "maria@gmail.com",
-      "answers": [
-        {
-          "question": "1",
-          "answer": "D"
-        },
-        {
-          "question": "2",
-          "answer": "B"
-        },
-        {
-          "question": "3",
-          "answer": "D"
-        },
-        {
-          "question": "4",
-          "answer": "A"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "name": "Joana ",
-      "email": "joana@gmail.com",
-      "answers": [
-        {
-          "question": "1",
           "answer": "B"
         },
         {
           "question": "2",
-          "answer": "B"
-        },
-        {
-          "question": "3",
           "answer": "C"
-        },
-        {
-          "question": "4",
-          "answer": "D"
         }
       ],
-      "id": 7
+      "id": 9
     }
+  
   ]
-}
+
+  }
+  

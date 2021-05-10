@@ -1,0 +1,31 @@
+{
+    "title": "League of Legends Quiz ",
+    "forms": {
+      "name": "Name",
+      "email": "E-mail",
+      "yourname": "Your Name",
+      "youremail": "Your E-mail",
+      "required": "required",
+      "send":"send"
+    },
+    "dashboard": {
+      "response":"Responses from participants",
+      "answers":"answers",
+      "participants":"participant"
+
+    },
+    "message":{
+      "registered": "Your answer was registered.",
+      "submit":"Submit another answer",
+      "see":"See answers"
+
+  
+
+
+  }
+
+  
+
+    
+  }
+  

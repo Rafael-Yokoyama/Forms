@@ -3,6 +3,7 @@
     margin: auto;
     span{
       color:var(--color-5);
+      
     }
     
   }
@@ -11,18 +12,19 @@
     background: var(--color-4);
     padding: 22px 24px 24px;
     border-radius: 10px;
-    margin: 12px 0;
+    margin: 17px 0;
     span {
     color: var(--color-5);
+    
   }
   }
   .block-1{
     background-image: url(https://blog.2amgaming.com/wp-content/uploads/2019/08/como-escolher-campeao-lol-.png);
     background-size: cover;
     background-position: center;
-    padding: 110px 40px ;
+    padding: 120px 40px ;
     border-radius: 10px;
-    margin: 12px 0;
+    margin: 18px 0;
     
 
   }
@@ -35,7 +37,7 @@
   
   header h1 {
     font-size: 32px;
-    margin: 0;
+    margin:15px 0;
     color: var(--color-3);
       
 
@@ -56,7 +58,7 @@
   
 
   
-  section .answer-radio {
+   .answer-radio {
     display: flex;
     flex-direction: column;
     
@@ -80,4 +82,17 @@
   }
   }
 
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -45px;
+    button{
+     
+      justify-content: flex-end;
+      width:30px;
+      height:25px;
+      margin-left: 4px;
+      margin-bottom: 20px;
+    }
+  }
   
